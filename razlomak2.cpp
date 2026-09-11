@@ -1,5 +1,5 @@
 #include <iostream>
-#include <numeric> // Za std::gcd
+#include <numeric>
 
 struct Razlomak {
     int brojilac;
@@ -60,7 +60,7 @@ int main() {
 
     std::cout << "r1 je "; r1.ispis();
     std::cout << "r2 je "; r2.ispis();
-    std::cout << "-----------------" << std::endl;
+    std::cout << std::endl;
 
     Razlomak zbir = r1 + r2;
     std::cout << "Zbir je "; zbir.ispis();

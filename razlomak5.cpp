@@ -8,7 +8,6 @@ private:
     int brojilac;
     int imenilac;
 
-    // Privatna pomoćna funkcija za skraćivanje
     void skrati() {
         if (imenilac == 0) return;
         int nzd = std::gcd(brojilac, imenilac);
@@ -16,20 +15,16 @@ private:
         imenilac /= nzd;
         if (imenilac < 0) {
             brojilac = -brojilac;
-            imenilac = -imenilac;
-        }
-    }
+            imenilac = -imenilac; } }
 
 public:
-    // Konstruktor sa podrazumevanim vrednostima
     Razlomak(int br = 0, int im = 1) {
         if (im == 0) {
             throw std::invalid_argument("Imenilac ne sme biti nula!");
         }
         brojilac = br;
         imenilac = im;
-        skrati(); 
-    }
+        skrati(); }
 
     // Get metode (ako zatreba čitanje vrednosti van klase, pošto su privatne)
     int getBrojilac() const { return brojilac; }

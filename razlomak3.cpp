@@ -1,6 +1,6 @@
 #include <iostream>
-#include <numeric>   // std::gcd
-#include <stdexcept> // std::invalid_argument
+#include <numeric>  
+#include <stdexcept> 
 
 class Razlomak {
 public:
@@ -63,7 +63,7 @@ int main() {
         
         std::cout << "r1 = "; r1.ispis();
         std::cout << "r2 = "; r2.ispis();
-        std::cout << "-----------------" << std::endl;
+        std::cout << std::endl;
 
         Razlomak zbir = r1 + r2;
         std::cout << "Zbir (3/4 + 1/2): "; zbir.ispis();
