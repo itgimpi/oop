@@ -1,0 +1,97 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Datum{
+    public:
+    int godina;
+    int dan;
+    int mesec;
+    void v1(){
+        cout<<"danas je " << dan <<"."<< mesec<< "." << godina << "." <<endl;
+    };
+    //Konstruktor
+    Datum(int godina,int dan,int mesec){
+        dan = d1;
+        mesec = d2;
+        godina = d3;
+    }
+
+};
+int main() {
+    Datum. 10;
+    Datum.d2 6;
+    Datum.d3 2025;
+
+    return 0;
+}
+int main() {
+    dan d1;
+    Datum.d1 10;
+    mesec d2;
+    Datum.d2 6;
+    godina d3;
+    Datum.d3 2025;
+    cout << v1 << endl;
+
+    return 0;
+}
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+class Automobil{
+    public:
+    string marka;
+    int godina;
+    int snaga;
+    int kubikaza;
+    void vozilo(){
+        cout <<"Automobil marke" << marka << godina << snaga << kubikaza << endl;
+    };
+    Automobil::(int godina, string marka, int snaga, int kubikaza): marka = m; godina = g; snaga = s;kubikaza = k;
+};
+
+int main(){
+    marka m;
+    Automobil.m BMW;
+    cout << m << endl;
+    godina g;
+    cout << g << endl;
+    snaga s;
+    cout << s << endl;
+    kubikaza k;
+    cout << k << endl;
+
+}
+
+
+#include <iostream>
+using namespace std;
+class Krug{
+public:
+    double x;
+    double y;
+    double r;
+    Krug(double a, double b, double c){
+        a=x;
+        b=y;
+        c=r; 
+    };
+    double P;
+    return 2*r *3.14;
+    double O;
+    return 2*3.14*r;
+    void krugic(){
+        cout << "centar je"<< x << y <<endl;
+        cout << "poluprecnik je"<< r <<endl;
+        cout << "povrsina je" << P <<endl;
+        cout << "Obim je" << O <<endl; 
+    }
+};
+int main() {
+    
+
+    return 0;
+} 
+
+

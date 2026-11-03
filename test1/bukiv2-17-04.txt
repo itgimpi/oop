@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Automobil {
+public:
+    string naziv;
+    int godiste;
+    double tezina;
+    double konjskeSnage;
+
+    Automobil(string naz, int g, double t, double ks) : naziv(naz), godiste(g), tezina(t), konjskeSnage(ks) {}
+
+    void prikazi() {
+        cout << naziv << ' ' << godiste << ' ' << tezina << ' ' << konjskeSnage << endl;
+    }
+
+    void uporedi(Automobil &drugiAuto) {
+        if(this->konjskeSnage > drugiAuto.konjskeSnage)
+            cout << "prvi je jaci" << endl;
+        else if(this->konjskeSnage < drugiAuto.konjskeSnage)
+            cout << "drugi je jaci" << endl;
+        else
+            cout << "ista snaga" << endl;
+    }
+};
+
+int main() {
+    Automobil auto1("BMW", 2025, 35, 36);
+    Automobil auto2("Audi", 2026, 30, 30);
+    
+    auto1.prikazi();
+    auto1.uporedi(auto2);
+
+    return 0;
+}

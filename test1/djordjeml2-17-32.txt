@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using  namespace std;
+
+class Auto {
+private:
+    string marka;
+    int godiste;
+    int kilometraza;
+    int snaga;
+
+public:
+   
+    Auto(string m, int g, int k, int s) {
+        marka = m;
+        godiste = g;
+        kilometraza = k;
+        snaga = s;
+    }
+
+   
+    void ispis() {
+        cout << "Marka: " << marka << endl;
+        cout << "Godiste: " << godiste << endl;
+        cout << "Kilometraza: " << kilometraza << " km" << endl;
+        cout << "Snaga: " << snaga << " KS" << endl;
+    }
+
+   
+    void uporedi(Auto drugi) {
+        if (kilometraza < drugi.kilometraza)
+            cout << marka << " ima manju kilometrazu.";
+        else if (kilometraza > drugi.kilometraza)
+            cout << marka << " ima vecu kilometrazu.";
+        else
+            cout << "Automobili imaju istu kilometrazu.";
+       
+        cout << endl;
+    }
+};
+
+int main() {
+    Auto a1("BMW", 2018, 120000, 190);
+    Auto a2("Audi", 2020, 90000, 150);
+
+    cout << "Prvi automobil:" << endl;
+    a1.ispis();
+
+    cout << "\nDrugi automobil:" << endl;
+    a2.ispis();
+
+    cout << "\nPoredjenje kilometraze:" << endl;
+    a1.uporedi(a2);
+
+    return 0;
+}

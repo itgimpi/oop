@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class Auto{
+    public:
+    string marka;
+    int godina;
+    int kilo;
+    int snaga;
+}
+Auto(string int godina = 0, int = kilo, int snaga = 0){
+    
+}
+
+
+int main(){
+    
+    return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class datum{
+    public:
+        int dan;
+        int mesec;
+        int god:
+    datum(int dan, int mesec, int god);
+}
+    datum(){
+        dan = 30;
+        mesec = 12;
+        god = 2026;
+    }
+void ispis(int d, int m, int g){
+    cout << dan << '.' << '\n';
+    cout << mesec << '.' << '\n';
+    cout << god << '.' << '\n';
+    
+}
+
+int main(){
+    datum.ispis();
+    return 0;
+}
+

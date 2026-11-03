@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class Tacka {
+public:
+    void ispis() {
+        cout << "Tacka" << endl;
+    }
+};
+
+class Duz {
+public:
+    void ispis() {
+        cout << "Duz" << endl;
+    }
+};
+
+class Krug {
+public:
+    void ispis() {
+        cout << "Krug" << endl;
+    }
+};
+
+class Trougao {
+public:
+    void ispis() {
+        cout << "Trougao" << endl;
+    }
+};
+
+class Kvadrat {
+public:
+    void ispis() {
+        cout << "Kvadrat" << endl;
+    }
+};
+
+int main() {
+    Tacka t;
+    Duz d;
+    Krug k;
+    Trougao tr;
+    Kvadrat kv;
+
+    t.ispis();
+    d.ispis();
+    k.ispis();
+    tr.ispis();
+    kv.ispis();
+
+    return 0;
+}

@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+//rekli ste da imam dva plusa od vas
+class Tacka {
+public:
+    int x;
+    int y;
+Tacka(double dx = 0, double dy = 0);
+};
+
+void ispis(){
+    cout << n << '.' << yn;
+}
+
+class Duz{
+public:
+    Tacka A;
+    Tacka B;
+Duz(Tacka A = 0, Tacka B = 0);
+};
+
+
+class Krug {
+public:
+    double poluprecnik;
+    Tacka centar;
+};
+
+Krug(int r = 1.0, double cx = 0.0, double cy = 0.0) {
+    poluprecnik = r;
+    centar.x = cx;
+    centar.y = cy;
+}
+
+double obim() const {
+    return 2 * poluprecnik * 3.14; 
+    
+double povrsina() const {
+    return poluprecnik * poluprecnik * 3.14; 
+
+class Trougao{
+    double a;
+    double b; 
+    double c;
+}
+
+int main(){
+    Tacka t1(3, 6)
+    Krug k1(3, 2, 1)
+    trougao t2(5,4,3)
+    return 0;

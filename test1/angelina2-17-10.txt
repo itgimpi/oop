@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+
+class Auto{
+public:
+    string marka;
+    int g;
+    int k;
+    int s;
+    Auto(string marka, int g, int k, int s):marka(marka),g(g),k(k),s(s){}
+    void ispis(){
+        cout << "Automobil " << marka << " je godine " << g << ", ima kilometrazu " << k << " i snagu " << s;
+    }
+    bool jaci(Auto a){
+        return s > a.s;
+    }
+};
+
+
+int main() 
+{
+    Auto a1("BMW",2000,5000,1000);
+    a1.ispis();
+    cout << '\n';
+    Auto a2("Audi",2005,3000,1500);
+    a2.ispis();
+    cout << '\n';
+    if (a1.jaci(a2))
+        cout << "prvi je jaci";
+    else if (a2.jaci(a1))
+        cout << "drugi je jaci";
+    return 0;
+}

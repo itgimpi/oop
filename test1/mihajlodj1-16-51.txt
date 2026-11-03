@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Auto{
+public:
+    string marka;
+    int godina;
+    int kilometraza;
+    int snaga;
+
+    Auto(string marka =Volkswagen, int godina=2000, int kilometraza =0, int snaga = 30): marka(m), godina(g),kilometraza(k), snaga(s){};
+
+
+
+};
+
+int main(){
+
+    return 0;
+}

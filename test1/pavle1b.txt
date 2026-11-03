@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Auto{
+    public:
+        string marka;
+        int godina;
+        int kilometraza;
+        int snaga;
+    Auto(string m = "" , int god = 0, int km = 0, int p = 0){
+        marka = m;
+        godina = god;
+        kilometraza = km;
+        snaga = p;
+    }
+    void ispis(){
+        cout <<  marka << " " << "godiste je" << godina << "Preso" << kilometraza << "Konja" << snaga ;
+    }
+
+    
+
+};

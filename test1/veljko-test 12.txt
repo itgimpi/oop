@@ -1,0 +1,118 @@
+Test
+
+1.
+
+##include <iostream>
+#include <iomanip>
+#include <ctime>
+
+class Datum {
+public:
+    int g, m, d;
+
+    Datum() {
+        time_t t = time(0);
+        tm* sada = localtime(&t);
+        g = sada->tm_year + 1900;
+        m = sada->tm_mon + 1;
+        d = sada->tm_mday;
+    }
+
+    Datum(int g, int m, int d) : g(g), m(m), d(d) {}
+
+    void unos() {
+        std::cout << "Unesite dan, mesec i godinu: ";
+        std::cin >> d >> m >> g;
+    }
+
+    void ispis() const {
+        std::cout << std::setfill('0') << std::setw(2) << d << "."
+                  << std::setfill('0') << std::setw(2) << m << "."
+                  << g << ".\n";
+    }
+
+    int uporedi(const Datum& drugi) const {
+        if (g != drugi.g) return g < drugi.g ? -1 : 1;
+        if (m != drugi.m) return m < drugi.m ? -1 : 1;
+        if (d != drugi.d) return d < drugi.d ? -1 : 1;
+        return 0;
+    }
+};
+
+int main() {
+    Datum d1;
+    Datum d2;
+
+    std::cout << "Danasnji datum (d1): ";
+    d1.ispis();
+
+    std::cout << "Unos za datum d2:\n";
+    d2.unos();
+
+    std::cout << "Datum d2: ";
+    d2.ispis();
+
+    int rez = d1.uporedi(d2);
+    if (rez == -1) std::cout << "d1 je pre d2\n";
+    else if (rez == 1) std::cout << "d1 je posle d2\n";
+    else std::cout << "Datumi su isti\n";
+
+    return 0;
+}
+
+
+2.
+#include <iostream>
+#include <string>
+
+class Auto {
+public:
+    std::string marka;
+    int godina;
+    int kilometraza;
+    int snagaMotora;
+
+    Auto() {
+        marka = "Nepoznato";
+        godina = 2000;
+        kilometraza = 0;
+        snagaMotora = 75;
+    }
+
+    Auto(std::string m, int g, int km, int ks) {
+        marka = m;
+        godina = g;
+        kilometraza = km;
+        snagaMotora = ks;
+    }
+
+    void ispis() const {
+        std::cout << "Marka: " << marka << "\n"
+                  << "Godina: " << godina << "\n"
+                  << "Kilometraza: " << kilometraza << " km\n"
+                  << "Snaga motora: " << snagaMot
+
+}
+
+}
+
+3. Tacka
+#include <iostream>
+#include <cmath>
+
+struct Tacka {                                                     
+    double x, y;
+    Tacka(double x = 0, double y = 0) : x(x), y(y) {}
+    double r(Tacka d) const { return hypot(x - d.x, y - d.y); }         
+    void ispis() const { std::cout << "(" << x << "," << y << ")";      
+}          
+
+
+int main() {
+
+    Tacka t1(0, 0), t2(3, 4);
+    std::cout << "Rastojanje: " << t1.r(t2) << "\n";
+
+
+return 0;
+} 

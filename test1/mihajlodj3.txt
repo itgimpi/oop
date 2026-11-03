@@ -1,0 +1,145 @@
+1.
+#include <iostream>
+
+using namespace std;
+
+class Datum {
+    int dan, mesec, godina;
+public:
+    Datum(int d, int m, int g) : dan(d), mesec(m), godina(g) {}
+
+    void ispisi() const {
+        cout << dan << "." << mesec << "." << godina << ".\n";
+    }
+
+    bool pre(const Datum& d) const {
+        if (godina != d.godina) return godina < d.godina;
+        if (mesec != d.mesec) return mesec < d.mesec;
+        return dan < d.dan;
+    }
+};
+
+int main() {
+    Datum d1(15, 5, 2020);
+    Datum d2(20, 3, 2022);
+
+    d1.ispisi();
+    d2.ispisi();
+
+    cout << (d1.pre(d2) ? "Prvi datum je raniji." : "Drugi datum je raniji.") << "\n";
+}
+
+
+
+
+2.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Auto {
+    string marka;
+    int km, snaga, godiste;
+public:
+    Auto(string m, int k, int s, int g) : marka(m), km(k), snaga(s), godiste(g) {}
+
+    void ispisi() const {
+        cout << marka << ", " << godiste << ". god, " << snaga << " KS, " << km << " km\n";
+    }
+
+    bool noviji(const Auto& a) const { return godiste > a.godiste; }
+    bool snazniji(const Auto& a) const { return snaga > a.snaga; }
+    bool manjaKm(const Auto& a) const { return km < a.km; }
+};
+
+int main() {
+    Auto a1("Audi", 150000, 140, 2015);
+    Auto a2("BMW", 120000, 190, 2018);
+
+    a1.ispisi();
+    a2.ispisi();
+
+    cout << (a1.noviji(a2) ? "Prvi" : "Drugi") << " je noviji.\n";
+    cout << (a1.snazniji(a2) ? "Prvi" : "Drugi") << " je snazniji.\n";
+    cout << (a1.manjaKm(a2) ? "Prvi" : "Drugi") << " ima manju kilometrazu.\n";
+}
+
+
+
+
+3.
+#include <bits/stdc++.h>
+using namespace std;
+
+class Tacka {
+public:
+    double x;
+    double y;
+
+    Tacka(double cx = 0.0, double cy = 0.0) : x(cx), y(cy) {}
+
+    void ispis() {
+        cout << "(" << x << ", " << y << ")";
+    }    
+};
+
+class Prava {
+public:
+    Tacka t1;
+    Tacka t2;
+
+    Prava(Tacka prva, Tacka druga) : t1(prva), t2(druga) {}
+
+    void prikaz() {
+        t1.ispis();
+        cout << " i ";
+        t2.ispis();
+        cout << endl;
+    }
+    // racunanje duzine izmedju tacaka
+    double duzina() {
+        return sqrt(pow(t2.x - t1.x, 2) + pow(t2.y - t1.y, 2));
+    }
+    //racunanje obima kruznice
+    double obim() {
+        return duzina() * 2 * 3.14;
+    }
+    //racunanje povrsine povrskruga
+    double povrskruga() {
+        return duzina() * duzina() * 3.14;
+    }
+
+    double obimtrugla() {
+        return duzina() * 3;
+    }
+
+    double povrstrougla() {
+        return ((duzina() * duzina())*sqrt(3))/4;
+    }
+
+    double obimkvadrata() {
+        return duzina() * 4;
+    }
+
+    double povrskvadrata() {
+        return duzina() * duzina();
+    }
+};
+
+int main() {
+    Tacka t1(0.0, 0.0);
+    Tacka t2(2.0, 2.0);
+
+    Prava p(t1, t2);
+    p.prikaz();
+    cout <<  p.duzina() << endl;
+    cout <<  p.obim() << endl;
+    cout <<  p.povrskruga() << endl;
+    cout <<  p.obimtrugla() << endl;
+    cout <<  p.povrstrougla() << endl;
+    cout <<  p.obimkvadrata() << endl;
+    cout <<  p.povrskvadrata() << endl;
+
+    return 0;
+}

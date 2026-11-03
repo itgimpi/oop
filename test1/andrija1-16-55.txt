@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Auto{
+public:
+    string marka;
+    int godina;
+    double kilo;
+    double snaga;
+    Auto(string m,int g,double k,double s):marka(m),godina(g),kilo(k),snaga(s){}
+    
+    void ispis(){
+        cout<<marka<<' '<<godina<<' '<<kilo<<' '<<snaga;
+
+    }
+    void provera(Auto &drugi){
+        if(this->snaga > drugi.snaga)
+            cout<<"prvi automobil ima vecu snagu"<<endl;
+        else if(this->snaga < drugi.snaga)
+            cout<<"drugi automobil ima vecu snagu"<<endl;
+        else if(this->snaga == drugi.snaga)
+            cout<<"imaju istu snagu"<<endl;
+    }
+
+
+};
+
+    
+
+
+int main() 
+{
+    Auto a1(m,2025,35,36);
+    Auto a2(n,2026,30,30);
+    a1.ispis();
+    a1.provera(a2);
+
+    return 0;
+    
+}

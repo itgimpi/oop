@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Datum{
+    public:
+        int dan;
+        int mesec;
+        int godina;
+    Datum(int d = 1 , int m = 1 , int g = 2000){
+        dan  = d;
+        mesec = m;
+        godina = g;
+
+    }
+    void ispis(){
+        cout << dan << "." << mesec << "."<< godina;
+    }    
+   
+
+};
+
+
+
+int main()
+{
+    Datum d1(2 , 7 , 2009);
+    d1.ispis();
+    Datum d2(4 , 7 , 2009);
+    d2.ispis();
+    return 0;
+}

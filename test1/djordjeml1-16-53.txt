@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+class Datum {
+private:
+    int dan, mesec, godina;
+
+public:
+    Datum(int d = 23, int m = 6, int g = 1998) {
+        dan = d;
+        mesec = m;
+        godina = g;
+    }
+
+    void unos() {
+        cout << "Unesite dan, mesec i godinu: ";
+        cin >> dan >> mesec >> godina;
+    }
+
+    void ispis() const {
+        cout << dan << "." << mesec << "." << godina << ".";
+    }
+
+    bool jeRanijiOd(const Datum& drugi) const {
+        if (godina != drugi.godina)
+            return godina < drugi.godina;
+
+        if (mesec != drugi.mesec)
+            return mesec < drugi.mesec;
+
+        return dan < drugi.dan;
+    }
+};
+ 
+int main() {
+    Datum d1, d2;
+
+    cout << "Prvi datum:\n";
+    d1.unos();
+
+    cout << "Drugi datum:\n";
+    d2.unos();
+
+    cout << "\nPrvi datum je: ";
+    d1.ispis();
+
+    cout << "\nDrugi datum je: ";
+    d2.ispis();
+
+    cout << "\n\nPoredjenje: ";
+
+    if (d1.jeRanijiOd(d2))
+        cout << "Prvi datum je raniji od drugog.";
+    else if (d2.jeRanijiOd(d1))
+        cout << "Prvi datum je kasniji od drugog.";
+    else
+        cout << "Datumi su jednaki.";
+
+    cout << endl;
+
+    return 0;
+}

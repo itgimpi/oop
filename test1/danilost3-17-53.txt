@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Tacka {
+public:
+    double x;
+    double y;
+
+    Tacka(double cx = 0.0, double cy = 0.0) : x(cx), y(cy) {}
+
+    void ispis() {
+        cout << "(" << x << ", " << y << ")";
+    }    
+};
+
+class Prava {
+public:
+    Tacka t1;
+    Tacka t2;
+
+    Prava(Tacka prva, Tacka druga) : t1(prva), t2(druga) {}
+
+    void prikaz() {
+        t1.ispis();
+        cout << " i ";
+        t2.ispis();
+        cout << endl;
+    }
+    // racunanje duzine izmedju tacaka
+    double duzina() {
+        return sqrt(pow(t2.x - t1.x, 2) + pow(t2.y - t1.y, 2));
+    }
+    //racunanje obima kruznice
+    double obim() {
+        return duzina() * 2 * 3.14;
+    }
+    //racunanje povrsine povrskruga
+    double povrskruga() {
+        return duzina() * duzina() * 3.14;
+    }
+
+    double obimtrugla() {
+        return duzina() * 3;
+    }
+
+    double povrstrougla() {
+        return ((duzina() * duzina())*sqrt(3))/4;
+    }
+
+    double obimkvadrata() {
+        return duzina() * 4;
+    }
+
+    double povrskvadrata() {
+        return duzina() * duzina();
+    }
+};
+
+int main() {
+    Tacka t1(0.0, 0.0);
+    Tacka t2(2.0, 2.0);
+
+    Prava p(t1, t2);
+    p.prikaz();
+    cout << p.duzina() << endl;
+    cout << p.obim() << endl;
+    cout << p.povrskruga() << endl;
+    cout << p.obimtrugla() << endl;
+    cout << p.povrstrougla() << endl;
+    cout << p.obimkvadrata() << endl;
+    cout << p.povrskvadrata() << endl;
+
+    return 0;
+}

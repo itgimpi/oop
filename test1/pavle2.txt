@@ -1,0 +1,76 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Tacka{
+  public:
+    int x;
+    int y;
+    Tacka(int dx = 0 , int dy = 0){
+        x = dx;
+        y = dy;
+    }
+    void ispis(){
+        cout << x << " " << y;
+    }
+    
+};
+
+//class Duz{
+    //public:
+        //Tacka a;
+        //Tacka b;
+   // Duz( int pocetak = 0 , int kraj = 1)
+
+
+
+//};
+
+
+
+class Krug{
+    public:
+        Tacka centar;
+        int precnik;
+    Krug( double r = 1.0 , double cx = 0.0 , double cy = 0.0){
+        precnik = r;
+        centar.x = cx;
+        centar.y = cy; 
+
+    
+    }
+    double obim()const{
+        return 2*precnik * 3.14;
+    }
+    double povrsina()const{
+        return 3.14 * (precnik * precnik);
+    }
+
+};
+class Trougao{
+    public:
+        Tacka poc;
+        int stranica;
+    Trougao(int a = 1, double cx = 0.0 , double cy = 0.0){
+        stranica = a;
+        poc.x = cx;
+        poc.y = cy;
+    }
+    double obim1(){
+        return stranica * 3 ; 
+    }
+    double povrsina1(){
+        return ((stranica * stranica ) * sqrt(3)) / 4 ; 
+    }
+};
+int main() 
+{
+    Tacka t1(2 , 4);
+    Krug k1(3 , 1 , 1 );
+    Trougao c1(4 , 1 , 1);
+    cout << c1.obim1();
+    cout << c1.povrsina1();
+    cout << k1.povrsina() << "\n";
+    cout << k1.obim();
+     t1.ispis();
+    return 0;
+}

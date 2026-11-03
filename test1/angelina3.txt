@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Krug{
+public:
+    double x,y;
+    double r;
+    Krug (double a, double b, double p){
+        x = a;
+        y = b;
+        r = p;
+    }
+    double povrsina(){
+        return r * r * 3.14;
+    }
+    double obim(){
+        return 2 * r * 3.14;
+    }
+    double rastojanjeCentara(Krug k){
+        double dx = x - k.x;
+        double dy = y - k.y;
+        return sqrt(dx * dx + dy * dy);
+    }
+    double rastojanjeKrugova(Krug k){
+        double d = rastojanjeCentara(k);
+        double razlika = d - r - k.r;
+        if (razlika > 0)
+            cout << razlika;
+        else
+            return 0;
+    }
+    void prikazi() {
+        cout << "centar: (" << x << ", " << y << ")" << endl;
+        cout << "poluprecnik: " << r << endl;
+        cout << "povrsina: " << povrsina() << endl;
+        cout << "obim: " << obim() << endl;
+    }
+};
+
+
+int main() 
+{
+    Krug k1(0,0,3);
+    Krug k2(8,0,2);
+    k1.prikazi();
+    cout << '\n';
+    cout << "---------------------------";
+    cout << '\n';
+    k2.prikazi();
+    cout << '\n';
+    return 0;
+}

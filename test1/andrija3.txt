@@ -1,0 +1,94 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+class Tacka{
+public:
+    double x;
+    double y;
+    Tacka(double cx=0.0,double cy=0.0):x(cx),y(cy){}
+    double rast(Tacka &druga){
+        return sqrt((this->x-druga.x)*(this->x-druga.x)+(this->y-druga.y)*(this->y-druga.y));
+    }
+};
+class Duz{
+public:
+    Tacka a;
+    Tacka b;
+    Duz(Tacka a1,Tacka b1):a(a1),b(b1){}
+    void provera(Duz &druga){
+        if(this->a.rast(b) > druga.a.rast(b)){
+            cout<<"prva je veca"<<endl;}
+        if(this->a.rast(b) < druga.a.rast(b)){
+            cout<<"druga je veca"<<endl;}
+        else{cout<<"iste su"<<endl;}
+
+    }
+};
+class Krug{
+public:
+    Tacka t1;
+    double poluprecnik;
+    Krug(Tacka t,double r=1.0):t1(t),poluprecnik(r){}
+    double obim(){
+        return 2*poluprecnik*3.14;
+    }
+    double povrsina(){
+        return poluprecnik*poluprecnik*3.14;
+    }
+};
+class Trougao{
+public:
+    Tacka t2;
+    double stranica1;
+    Trougao(Tacka t,double s):t2(t),stranica1(s){}
+    double obim1(){
+        return 3*stranica1;
+    }
+    double povrsina1(){
+        return (stranica1*stranica1*sqrt(3))/4;
+    }
+};
+class Kvadrat{
+public:
+    Tacka t3;
+    double stranica2;
+    Kvadrat(Tacka t,double s):t3(t),stranica2(s){}
+    double obim2(){
+        return 4*stranica2;
+    }
+    double povrsina2(){
+        return stranica2*stranica2;
+    }
+};
+
+
+
+    
+
+
+int main() 
+{
+    Tacka t1(0,0);
+    Tacka t2(1,1);
+    Tacka t3(2,2);
+    Tacka t4(3,4);
+    Duz d1(t1,t2);
+    Duz d2(t3,t4);
+    Krug k(t1,1);
+    Trougao t(t1,2);
+    Kvadrat kv(t1,2);
+    cout<<t1.rast(t2)<<endl;
+    cout<<t3.rast(t4)<<endl;
+    d1.provera(d2);
+    cout<<k.obim()<<endl;
+    cout<<k.povrsina()<<endl;
+    cout<<t.obim1()<<endl;
+    cout<<t.povrsina1()<<endl;
+    cout<<kv.obim2()<<endl;
+    cout<<kv.povrsina2()<<endl;
+    
+
+
+    return 0;
+    
+}

@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class Datum{
+public:
+    int godina;
+    int mesec;
+    int dan;
+   
+    Datum(int g=2026, int m = 1, int d=1):godina(g),mesec(m),dan(d){}
+    void ispis(){
+        cout<<dan<<'.'<<mesec<<'.'<<godina<<endl;
+    }
+    void proveri(Datum &drugi){
+        int zbir1=this->godina * 365 + this->mesec * 30 + this->dan;
+        int zbir2=drugi.godina * 365 + drugi.mesec * 30 + drugi.dan;
+        if(zbir1>zbir2)
+            cout<<"prvi je veci"<<endl;
+        else
+            cout<<"drugi je veci"<<endl;}
+
+   
+};
+
+int main()
+{
+    Datum d1(2026,2,2);
+    Datum d2(2025,3,3);
+    d1.ispis();
+    return 0;
+    d1.proveri(d2);
+}
+
+int main()
+{
+    Datum d1(2026,2,2);
+    Datum d2;
+    d1.ispis();
+d1.proveri(d2);
+    return 0;
+   
+}

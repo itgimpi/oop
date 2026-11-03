@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class Datum{
+public:
+    int g;
+    int m;
+    int d;
+
+    Datum(int d = 1, int m=1 ,int g=1999): g(g),d(d),m(m){}
+
+    void ispis(){
+        cout<<d<< "."<<m<< "."<<g<<"."<<endl;
+    }
+
+
+
+    void provera(Datum& ){
+       
+    }
+
+   
+};
+
+int main(){
+
+    Datum d1(20,2,2000);
+    d1.ispis();
+    Datum d2(14,3,2007);
+    d2.ispis();
+
+   
+    return 0;
+}
